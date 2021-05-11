@@ -14,6 +14,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: xx-large;
 }
 
 .focused {
@@ -24,18 +25,18 @@ body {
 
 .btn {
   text-decoration: none;
-  background-color: teal;
+  background-color: #6b705c;
   color: white;
   border-radius: 4px;
   padding: 0.75rem 1.5rem;
-  border: 1px solid teal;
+  border: 1px solid #6b705c;
   cursor: pointer;
 }
 
 .btn:hover,
 .btn:active {
-  background-color: #11acac;
-  border-color: #11acac;
+  background-color: #b7b7a4;
+  border-color: #b7b7a4;
 }
 
 .btn--flat {
