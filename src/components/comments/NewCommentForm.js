@@ -2,11 +2,12 @@ import { useRef, useEffect } from 'react';
 import useHttp from '../../hooks/use-http';
 import classes from './NewCommentForm.module.css';
 import LoadingSpinner from '../UI/LoadingSpinner';
+import { addComment } from '../../lib/api';
 
 const NewCommentForm = (props) => {
   const commentTextRef = useRef();
   const { onAddedComment } = props;
-  const { sendRequest, status, error } = useHttp(onAddedComment);
+  const { sendRequest, status, error } = useHttp(addComment);
 
   useEffect(() => {
     if (status === 'completed' && !error) {

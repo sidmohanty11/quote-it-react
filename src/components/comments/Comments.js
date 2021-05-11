@@ -5,7 +5,7 @@ import classes from './Comments.module.css';
 import NewCommentForm from './NewCommentForm';
 import { getAllComments } from '../../lib/api';
 import LoadingSpinner from '../UI/LoadingSpinner';
-import CommentsList from '../comments/CommentsList';
+import CommentsList from './CommentsList';
 
 const Comments = () => {
   const [isAddingComment, setIsAddingComment] = useState(false);
@@ -17,13 +17,14 @@ const Comments = () => {
   useEffect(() => {
     sendRequest(quoteId);
   }, [sendRequest, quoteId]);
+
   const startAddCommentHandler = () => {
     setIsAddingComment(true);
   };
 
   const addComment = useCallback(() => {
-    sendRequest(quoteId);
-  }, [sendRequest, quoteId],
+      sendRequest(quoteId);
+    }, [sendRequest, quoteId],
   );
 
   let cmts;
@@ -33,7 +34,7 @@ const Comments = () => {
   }
 
   if (status === 'completed' && (data && data.length>0)) {
-    cmts = <CommentsList />;
+    cmts = <CommentsList comments={data} />;
   }
 
   if (status === 'completed' && (!data || data.length === 0)) {
