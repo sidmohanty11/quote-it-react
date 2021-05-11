@@ -4,7 +4,7 @@ const HighlightedQuote = (props) => {
   return (
     <figure className={classes.quote}>
       <p><i>"{props.text}"</i></p>
-      <figcaption>{props.author}</figcaption>
+      <figcaption>-{props.author}</figcaption>
     </figure>
   );
 };
